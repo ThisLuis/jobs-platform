@@ -8,13 +8,7 @@ module.exports = {
         './resources/views/**/*.blade.php',
     ],
 
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-            },
-        },
-    },
+   
 
     plugins: [require('@tailwindcss/forms')],
 };
