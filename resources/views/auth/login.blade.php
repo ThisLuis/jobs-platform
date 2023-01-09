@@ -48,8 +48,6 @@
             >
                 Olvidaste tu contraseña
             </x-link>
-
-           
         </div>
        
     </form>

@@ -22,5 +22,6 @@
     </head>
     <body>
         <h1>Devjobs</h1>
+        <h2><a href="{{ route('register') }}">Crear cuenta</a></h2>
     </body>
 </html>
