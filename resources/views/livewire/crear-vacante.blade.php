@@ -1,4 +1,4 @@
-<form action="" class="md:w-1/2 space-y-5">
+<form wire:submit.prevent='crearVacante' action="" class="md:w-1/2 space-y-5">
     <div>
         <x-input-label for="Titulo" :value="__('Titulo Vacante')" />
         <x-text-input 
@@ -9,6 +9,11 @@
             :value="old('titulo')"
             placeholder="Titulo Vacante"
         />
+
+        @error('titulo')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
+
     </div>
     <div>
         <x-input-label for="salario" :value="__('Salario Mensual')" />
@@ -22,6 +27,11 @@
             <option value="{{ $salario->id }}">{{ $salario->salario }}</option>
         @endforeach
         </select>
+        
+        @error('salario')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
+
     </div>
 
     <div>
@@ -36,6 +46,12 @@
             <option value="{{$categoria->id}}">{{ $categoria->categoria }}</option>
         @endforeach
         </select>
+
+        @error('categoria')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
+
+
     </div>
 
     <div>
@@ -48,6 +64,11 @@
             :value="old('titulo')"
             placeholder="Empresa: ej, Netflix, Uber, Shopify"
         />
+
+        @error('empresa')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
+
     </div>
 
     <div>
@@ -59,6 +80,12 @@
             wire:model="ultimo_dia" 
             :value="old('ultimo_dia')"
         />
+
+        @error('ultimo_dia')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
+
+
     </div>
 
     <div>
@@ -69,6 +96,12 @@
             placeholder="Descripcion general del puesto"
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full h-72"
         ></textarea>
+
+        @error('descripcion')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
+
+
     </div>
 
     <div>
@@ -79,6 +112,12 @@
             type="file" 
             wire:model="imagen" 
         />
+
+        @error('imagen')
+            <livewire:mostrar-alerta :message="$message"/>
+        @enderror
+
+
     </div>
 
     <x-primary-button class="w-full justify-center">
