@@ -5,7 +5,7 @@
             id="titulo" 
             class="block mt-1 w-full" 
             type="text" 
-            name="titulo" 
+            wire:model="titulo"
             :value="old('titulo')"
             placeholder="Titulo Vacante"
         />
@@ -13,7 +13,7 @@
     <div>
         <x-input-label for="salario" :value="__('Salario Mensual')" />
         <select 
-            name="salario" 
+            wire:model="salario" 
             id="salario"
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
             >
@@ -27,7 +27,7 @@
     <div>
         <x-input-label for="categoria" :value="__('Categoria')" />
         <select 
-            name="categoria" 
+            wire:model="categoria" 
             id="categoria"
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full"
             >
@@ -44,7 +44,7 @@
             id="empresa" 
             class="block mt-1 w-full" 
             type="text" 
-            name="empresa" 
+            wire:model="empresa" 
             :value="old('titulo')"
             placeholder="Empresa: ej, Netflix, Uber, Shopify"
         />
@@ -56,7 +56,7 @@
             id="ultimo_dia" 
             class="block mt-1 w-full" 
             type="date" 
-            name="ultimo_dia" 
+            wire:model="ultimo_dia" 
             :value="old('ultimo_dia')"
         />
     </div>
@@ -64,7 +64,7 @@
     <div>
         <x-input-label for="descripcion" :value="__('Descripcion puesto')" />
         <textarea 
-            name="descripcion" 
+            wire:model="descripcion" 
             id="descripcion"
             placeholder="Descripcion general del puesto"
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full h-72"
@@ -72,12 +72,12 @@
     </div>
 
     <div>
-        <x-input-label for="Titulo" :value="__('Imagen')" />
+        <x-input-label for="imagen" :value="__('Imagen')" />
         <x-text-input 
             id="imagen" 
             class="block mt-1 w-full" 
             type="file" 
-            name="imagen" 
+            wire:model="imagen" 
         />
     </div>
 
